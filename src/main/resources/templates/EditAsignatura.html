@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Clase</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Editar Clase</h2>
+    <form th:action="@{/rector/classes/update/{id}(id=${clase.id})}" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="claseNombre">Nombre de la Clase</label>
+            <input type="text" class="form-control" id="claseNombre" name="claseNombre" th:value="${clase.claseNombre}" maxlength="20">
+        </div>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+        <a th:href="@{/rector/classes}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
